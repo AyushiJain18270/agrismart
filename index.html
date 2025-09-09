@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgriSmart - Smart Pesticide Sprinkling Dashboard</title>
+    <meta name="description" content="Modern IoT dashboard for smart pesticide management and crop monitoring" />
+    <meta name="author" content="AgriSmart" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <meta property="og:title" content="AgriSmart IoT Dashboard" />
+    <meta property="og:description" content="Smart Pesticide Sprinkling System Dashboard" />
+    <meta property="og:type" content="website" />
+  </head>
+
+  <body>
+    <!-- Dashboard Header -->
+    <header class="dashboard-header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <h1>🌱 AgriSmart</h1>
+          </div>
+          <div class="header-actions">
+            <div class="search-bar">
+              <input type="text" placeholder="Search...">
+            </div>
+            <button class="notification-btn">
+              <span class="icon">🔔</span>
+              <span class="badge">3</span>
+            </button>
+            <div class="user-profile">
+              <img src="https://via.placeholder.com/40" alt="Profile" class="avatar">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        
+        <!-- Main Dashboard Grid -->
+        <div class="dashboard-grid">
+          <!-- Plant Health Status -->
+          <div class="card plant-health-card">
+            <div class="card-header">
+              <h3 class="card-title">
+                <span class="icon success">📊</span>
+                Plant Health Status
+              </h3>
+            </div>
+            <div class="card-content">
+              <div class="health-stat">
+                <div class="stat-info">
+                  <span class="icon success">✓</span>
+                  <span class="label">Healthy Plants</span>
+                  <span class="value success">78%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill success" data-progress="78"></div>
+                </div>
+              </div>
+              
+              <div class="health-stat">
+                <div class="stat-info">
+                  <span class="icon danger">⚠</span>
+                  <span class="label">Infected Plants</span>
+                  <span class="value danger">22%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill danger" data-progress="22"></div>
+                </div>
+              </div>
+              
+              <div class="card-footer">
+                <p class="timestamp">Last updated: 5 minutes ago</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Weather Information -->
+          <div class="card weather-card">
+            <div class="card-header">
+              <h3 class="card-title">
+                <span class="icon">🌤</span>
+                Weather Information
+              </h3>
+            </div>
+            <div class="card-content">
+              <div class="weather-main">
+                <div class="temperature">
+                  <span class="temp-value" id="temperature">28°C</span>
+                  <span class="condition" id="weather-condition">Partly Cloudy</span>
+                </div>
+              </div>
+              
+              <div class="weather-details">
+                <div class="weather-item">
+                  <span class="icon">💧</span>
+                  <span class="label">Humidity</span>
+                  <span class="value" id="humidity">65%</span>
+                </div>
+                <div class="weather-item">
+                  <span class="icon">💨</span>
+                  <span class="label">Wind Speed</span>
+                  <span class="value" id="wind-speed">12 km/h</span>
+                </div>
+                <div class="weather-item">
+                  <span class="icon">👁</span>
+                  <span class="label">Visibility</span>
+                  <span class="value" id="visibility">10 km</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+        
+
+          <!-- Sensor Data -->
+          <div class="card sensor-card">
+            <div class="card-header">
+              <h3 class="card-title">
+                <span class="icon">🔧</span>
+                Sensor Data
+              </h3>
+            </div>
+            <div class="card-content">
+              <div class="sensor-grid">
+                <div class="sensor-item">
+                  <span class="icon">🌡</span>
+                  <div class="sensor-info">
+                    <span class="label">Temperature</span>
+                    <span class="value" id="sensor-temp">24°C</span>
+                    <span class="status success">Normal</span>
+                  </div>
+                  <div class="sensor-progress">
+                    <div class="progress-fill success" data-progress="75"></div>
+                  </div>
+                </div>
+                
+                <div class="sensor-item">
+                  <span class="icon">💧</span>
+                  <div class="sensor-info">
+                    <span class="label">Humidity</span>
+                    <span class="value" id="sensor-humidity">68%</span>
+                    <span class="status success">Good</span>
+                  </div>
+                  <div class="sensor-progress">
+                    <div class="progress-fill success" data-progress="68"></div>
+                  </div>
+                </div>
+                
+                <div class="sensor-item">
+                  <span class="icon">🌱</span>
+                  <div class="sensor-info">
+                    <span class="label">Soil Moisture</span>
+                    <span class="value" id="soil-moisture">45%</span>
+                    <span class="status warning">Low</span>
+                  </div>
+                  <div class="sensor-progress">
+                    <div class="progress-fill warning" data-progress="45"></div>
+                  </div>
+                </div>
+                
+                <div class="sensor-item">
+                  <span class="icon">🔋</span>
+                  <div class="sensor-info">
+                    <span class="label">Battery Level</span>
+                    <span class="value" id="battery-level">92%</span>
+                    <span class="status success">Excellent</span>
+                  </div>
+                  <div class="sensor-progress">
+                    <div class="progress-fill success" data-progress="92"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="card-footer">
+                <p class="timestamp">Last sync: 2 minutes ago</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Control Panel -->
+          <div class="card control-panel">
+            <div class="card-header">
+              <h3 class="card-title">
+                <span class="icon">🎛</span>
+                Control Panel
+              </h3>
+            </div>
+            <div class="card-content">
+              <div class="control-item">
+                <label class="switch-label">
+                  <span class="label-text">Auto Mode</span>
+                  <div class="switch">
+                    <input type="checkbox" id="auto-mode-toggle">
+                    <span class="slider"></span>
+                  </div>
+                </label>
+              </div>
+              
+              <button class="spray-button" id="spray-button">
+                <span class="button-icon">💦</span>
+                <span class="button-text">START SPRAY</span>
+              </button>
+              
+              <div class="spray-status" id="spray-status" style="display: none;">
+                <div class="status-indicator">
+                  <span class="pulse-dot"></span>
+                  <span>SPRAYING ACTIVE</span>
+                </div>
+                <p class="estimated-time">Estimated time: 3 minutes</p>
+              </div>
+              
+              <div class="control-stats">
+                <div class="stat">
+                  <span class="label">Tank Level</span>
+                  <span class="value">85%</span>
+                </div>
+                <div class="stat">
+                  <span class="label">Pressure</span>
+                  <span class="value">2.3 bar</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notifications -->
+          <div class="card notifications-card">
+            <div class="card-header">
+              <h3 class="card-title">
+                <span class="icon">🔔</span>
+                Notifications
+                <span class="count-badge">3</span>
+              </h3>
+            </div>
+            <div class="card-content">
+              <div class="notifications-list">
+                <div class="notification-item success">
+                  <span class="notification-icon">✓</span>
+                  <div class="notification-content">
+                    <h4>Spray Completed</h4>
+                    <p>Area B successfully treated</p>
+                    <span class="notification-time">2 minutes ago</span>
+                  </div>
+                </div>
+                
+                <div class="notification-item warning">
+                  <span class="notification-icon">⚠</span>
+                  <div class="notification-content">
+                    <h4>Low Tank Level</h4>
+                    <p>Refill required soon</p>
+                    <span class="notification-time">15 minutes ago</span>
+                  </div>
+                </div>
+                
+                <div class="notification-item info">
+                  <span class="notification-icon">ℹ</span>
+                  <div class="notification-content">
+                    <h4>Sensor Calibrated</h4>
+                    <p>All sensors working normally</p>
+                    <span class="notification-time">1 hour ago</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analytics Section -->
+        <div class="analytics-section">
+          <div class="card analytics-card">
+            <div class="card-header">
+              <h3 class="card-title">
+                <span class="icon">📈</span>
+                Analytics
+              </h3>
+              <div class="chart-tabs">
+                <button class="chart-tab active" data-chart="infection">Infection Trends</button>
+                <button class="chart-tab" data-chart="usage">Pesticide Usage</button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="chart-container">
+                <canvas id="analytics-chart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+    </body>
+</html>
